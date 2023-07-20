@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>I bet I can</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <style>
+      .carousel img {
+        display: block;
+        width: 200px; /* Adjust the width as needed */
+        margin-left: auto; /* Set left margin to auto */
+        margin-right: 0; /* Set right margin to 0 */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.svg" alt="Logo" />
+      </div class="tagline">
+      <div>
+        <p><a href="index.html">Социальная сеть достижений</a></p>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <div>
+          <p>Создано при поддержке Фонда содействия развитию малых форм предприятий в научно-технической сфере (Фонд содействия инновациям) в рамках федерального проекта «Платформа университетского технологического предпринимательства».</p>
+        </div>
+        <a href="https://fasie.ru/">
+          <img src="images/fasie.svg" alt="Fasie" />
+        </a>      
+      </div>
+
+      <div class="container">
+        <div>
+          <h2>Присоединяйся и качай свои навыки, проекты, достигай своих целей</h2>
+          <button id="joinButton" onclick="window.location.href = 'https://fab.ibetican.ru/'">Присоединиться</button>
+          <p>Вместе с "Башней Политех" мы разработали приложение, которое поможет тебе:</p>
+          <ul>
+            <li>прокачать свои скилы</li>
+            <li>найти участников в команду</li>
+            <li>соревноваться в достижении целей</li>
+          </ul>
+        </div>
+        <div class="carousel">
+          <img src="images/demo-people.svg" alt="People" />
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <p>ООО «СОФТА»</p>
+        <p>ИНН: 7840102219</p>
+        <p>КПП: 784001001</p>
+        <p>г. Санкт-Петербург, ул. Рылеева, д. 3, литера А, помещ. 2Н, офис 1</p>
+        <p>ooo.softa@yandex.ru</p>
+        <p>+7 921 398 54 46</p>
+      </div>
+      <div>
+        <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+        <p><a href="https://fab.ibetican.ru/">Приложение</a></p>
+      </div>
+      <div class="note">
+        <p>Создано при поддержке Фонда содействия развитию малых форм предприятий в научно-технической сфере (Фонд содействия инновациям) в рамках федерального проекта «Платформа университетского технологического предпринимательства».</p>
+      </div>
+    </footer>
+
+    <script>
+  const carouselImages = [
+    'images/demo-people.svg',
+    'images/demo-profile.svg',
+    'images/demo-tasks.svg',
+    'images/demo-skills.svg',
+
+  ];
+  let currentImageIndex = 0;
+  const carouselImage = document.querySelector('.carousel img');
+
+  carouselImage.style.transition = 'opacity 0.5s ease-in-out'; // Add transition CSS property
+
+  function changeImage() {
+    carouselImage.style.opacity = 0; // Set opacity to 0 before changing the image
+
+    setTimeout(() => {
+      carouselImage.src = carouselImages[currentImageIndex];
+      carouselImage.style.opacity = 1; // Set opacity to 1 after changing the image
+      currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+    }, 500); // Delay the image change by 500 milliseconds for the transition effect
+  }
+
+  setInterval(changeImage, 3000);
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+}
+
+@keyframes shining {
+  0% {
+    opacity: 1;
+    text-shadow: none;
+
+  }
+  50% {
+    opacity: 0.9;
+    text-shadow: 0 10px 10px lightblue;
+    border-radius: 20px;
+
+  }
+  100% {
+    opacity: 1;
+    text-shadow: none;
+
+  }
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+
+nav {
+  display: flex;
+  flex-direction: column; /* Added flex-direction property */
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px #ececec;
+  background-color: white;
+  font-weight: 300;
+  box-shadow: 0 10px 100px #ececec; /* Added box-shadow property */
+
+}
+
+@media (min-width: 768px) {
+  nav {
+    font-size: 10px;
+  }
+}
+
+nav p {
+  display: inline-block;
+  min-width: 9rem;
+  border-radius: 0px;
+  border: 0px solid black;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  text-align: center;
+  
+  color: gray;
+  font-weight: 400;
+  margin-top: 0px;
+  animation: shining 5s infinite; /* Apply the animation */
+  box-shadow: 0px 0px 0px 0px #5B82FF; /* Add the glow effect */
+
+}
+
+@media (min-width: 768px) {
+  nav p {
+    font-size: 10px;
+    font-weight: 400;
+  }
+}
+
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+
+nav a[aria-current='page'] {
+  color: #000;
+  background-color: #d4d4d4;
+}
+
+nav p a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+
+
+}
+
+@media (min-width: 768px) {
+  nav p a {
+    font-size: 20px;
+  }
+}
+
+
+
+.footer {
+  display: grid;
+  position:static;
+  bottom: 0;
+  left: 0;
+  grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+  grid-gap: 2rem; /* Gap between columns */
+  background-color: black;
+  padding: 1rem;
+  height: inherit
+
+}
+
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr; /* Display a single column on smaller screens */
+    grid-gap: 2rem; /* Reduce the gap between columns */
+  }
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: white;
+  font-family: 'Helvetica Neue', 'Montserrat', 'Roboto', 'Open Sans', Arial, sans-serif;
+  font-weight: 300;
+
+}
+
+.footer a {
+  text-decoration:underline;
+  color: darkcyan;
+  font-weight: 400;
+}
+
+.note {
+  background-color: #4e4e4e;
+  padding: 1rem;
+  text-align: justify;
+  color: white;
+  border-radius: 10px;
+  width: full;
+}
+
+@media (min-width: 768px) {
+  .note {
+    grid-column: 1 / -1; /* Span across all columns on larger screens */
+  }
+}
+
+.note p {
+  color: lightgray;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+
+main {
+  width: 100%;
+  font-family: 'Helvetica Neue', 'Montserrat', 'Roboto', 'Open Sans', Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px;
+  
+}
+
+
+.logo {
+  margin-bottom: -20px;
+
+}
+
+@media (max-width: 768px) {
+  .logo {
+    transform: scale(0.5);
+    margin-bottom: -30px;
+    
+
+  }
+}
+
+
+.container {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 1rem; /* Add some gap between items */
+  background-color: white;
+  padding: 1rem;
+  margin: 0 50px; /* Center the image horizontally */
+  flex: 1 1; /* Each div takes 50% of the container width */
+  margin-top: 0px;
+  border-radius: 20px;
+
+
+
+}
+
+@media (max-width: 768px) {
+  .container {
+    font-size: 14px;
+    margin: 0 20px; /* Center the image horizontally */
+
+
+    
+    
+  }
+}
+
+
+
+.container img {
+  flex-shrink: 0;
+  width: 200px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the image horizontally */
+  margin-top: 20px;
+  display: block; /* Remove any default spacing */
+  border-radius: 30px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1); /* Add the glow effect */
+
+}
+
+@media (max-width: 768px) {
+  .container img{
+
+
+
+  }
+}
+
+
+
+
+.container > div {
+  flex: 1 1 20%; /* Each div takes 50% of the container width */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center;
+  justify-items: center;
+
+  
+}
+
+@media (max-width: 768px) {
+  .container > div {
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Remove any default spacing */
+    flex: 0; /* Each div takes 50% of the container width */
+    
+
+  }
+}
+
+
+.container button{
+  background-color: #5B82FF;
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: 'Helvetica Neue', 'Montserrat', 'Roboto', 'Open Sans', Arial, sans-serif;
+  font-weight: 400;
+  border-width: 0px;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Apply transition to specific properties */
+}
+
+@media (max-width: 768px) {
+  .container button{
+    width: 180px;
+    margin: 0 0; /* Center the image horizontally */
+    display: block; /* Remove any default spacing */
+    margin-bottom: 20px;
+    border-width: 0px;
+
+
+  }
+}
+
+.container button:hover {
+  background-color: #1147eb;
+  color: white; /* Change the text color on hover */
+  transform: scale(1.1);
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  box-shadow: 0 10px 100px #ececec; /* Added box-shadow property */
+  border-width: 1px;
+
+}
+
+
+
+.container p {
+  font-size: 30px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  
+}
+
+@media (max-width: 768px) {
+  .container p {
+    font-size: 14px;
+    margin: 0 auto; /* Center the image horizontally */
+    flex: 1 1; /* Each div takes 50% of the container width */
+
+  }
+}
+
+
+.container li {
+  list-style-type: square;
+  padding-left: 1rem;
+  font-size: 18px;
+  opacity: 1;
+  margin-left: -10px;
+  margin-bottom: 5px;
+}
+
+
+
+@media (max-width: 768px) {
+  .container li {
+    font-size: 14px;
+  }
+}
+
+.u1 li {
+  margin-bottom: 0.5rem;
+  color: blue;
+  font-family: 'Helvetica Neue', 'Montserrat', 'Roboto', 'Open Sans', Arial, sans-serif;
+  
+
+}
+
+.u1 li a {
+  color: blue; /* Override the link styles to set the text color to blue */
+}
+
+
+
+
+h1 {
+  font-weight: 400;
+  color: white;
+  font-size: 40px;
+  font-family: 'Helvetica Neue', 'Montserrat', 'Roboto', 'Open Sans', Arial, sans-serif;
+  margin-bottom: 0; /* Added margin-bottom to remove default spacing */  
+}
+
+h2 {
+  font-weight: 600;
+  color: black;
+  font-size: 24px;
+  font-family: 'Helvetica Neue', 'Montserrat', 'Roboto', 'Open Sans', Arial, sans-serif;
+  margin-bottom: 0; /* Added margin-bottom to remove default spacing */  
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-weight: 400;
+  color: black;
+  font-size: 20px;
+  font-family: 'Helvetica Neue', 'Montserrat', 'Roboto', 'Open Sans', Arial, sans-serif;
+}
+
+p {
+  align-content: center;
+  font-size: 18px;
+  color: black;
+  text-align: justify;
+}
+
+
+
+
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  width: 200px; /* Adjust the width as needed */
+
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    width: 200px; /* Adjust the width as needed */
+  }
+
+}
+
+.carousel img {
+  width: 200px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Remove any default spacing */
+}
+
+
+
+
